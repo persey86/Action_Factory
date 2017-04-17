@@ -16,9 +16,6 @@ import java.util.Map;
  */
 public class OvalValidator {
 
-
-
-
     private Validator validator = new Validator();
 
     /*public OvalValidator() {

@@ -36,12 +36,16 @@ public class DepartmentRepositoryImpl implements DepartmentRepository{
         //we should change variable "entity" to "department" inside the method only to avoid bad code in signature
         Department department = entity;
         Integer id = department.getId();
+        String name = department.getName();
 
-        if (id == null){
+        if (id == null) {
+  //          if (!isAnyDepartmentHasThisName(name)) {
 
-            //Do save if entity doesn't have ID
-            department = createDepartment(department.getName(), department.getCreated());
+                //Do save if entity doesn't have ID
+                department = createDepartment(department.getName(), department.getCreated());
+    //        }
         }else {
+    //        if (!isAnotherDepartmentHasThisName(id, name)){
             updateDepartment(department.getId(),department.getName(),department.getCreated());
         }
 
@@ -90,7 +94,7 @@ public class DepartmentRepositoryImpl implements DepartmentRepository{
 
             return department;
         } catch (ClassNotFoundException | SQLException e) {
-            throw new DepartmentRepositoryException("Error while adding new department", e);
+            throw new DepartmentRepositoryException("Error while adding new department",e);
         }
     }
 
@@ -101,7 +105,7 @@ public class DepartmentRepositoryImpl implements DepartmentRepository{
             pStm.setInt(1, id);
             pStm.executeUpdate();
         } catch (SQLException | ClassNotFoundException e) {
-            throw new DepartmentRepositoryException("Error while deleted models form SQL ", e);
+            throw new DepartmentRepositoryException("Error while deleted models form SQL ",e);
         }
     }
 
@@ -122,7 +126,7 @@ public class DepartmentRepositoryImpl implements DepartmentRepository{
             }
             return department;
         } catch (SQLException | ClassNotFoundException e) {
-            throw new DepartmentRepositoryException("Error while getting departments by ID", e);
+            throw new DepartmentRepositoryException("Error while getting departments by ID",e);
         }
     }
 
@@ -137,7 +141,7 @@ public class DepartmentRepositoryImpl implements DepartmentRepository{
            pStm.executeUpdate();
 
         } catch (SQLException | ClassNotFoundException e) {
-            throw new DepartmentRepositoryException("Error while updating departments by ID", e);
+            throw new DepartmentRepositoryException("Error while updating departments by ID",e);
         }
     }
 
@@ -159,7 +163,7 @@ public class DepartmentRepositoryImpl implements DepartmentRepository{
             }
             return count > 0;
         } catch (SQLException | ClassNotFoundException e) {
-            throw new DepartmentRepositoryException("Error while getting departments by ID", e);
+            throw new DepartmentRepositoryException("Error while getting departments by ID",e);
         }
     }
 
@@ -182,7 +186,7 @@ public class DepartmentRepositoryImpl implements DepartmentRepository{
             }
             return count > 0;
         } catch (SQLException | ClassNotFoundException e) {
-            throw new DepartmentRepositoryException("Error when check is any department has this name", e);
+            throw new DepartmentRepositoryException("Error when check is any department has this name",e);
         }
     }
 }

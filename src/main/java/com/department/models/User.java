@@ -1,9 +1,7 @@
 package com.department.models;
 
 import com.department.validation.NotRussisanLetters;
-import net.sf.oval.constraint.NotEmpty;
-import net.sf.oval.constraint.NotNegative;
-import net.sf.oval.constraint.Size;
+import net.sf.oval.constraint.*;
 
 import java.util.Date;
 
@@ -14,20 +12,22 @@ public class User {
     private Integer id;
     private Integer departmentId;
 
+    @AssertTrue(message = "another user has used this name")
     @NotRussisanLetters()
     @Size(min = 3, message = "Field must must have more than 3 symbols")
     @NotEmpty(message = "Field 'name' can't be empty, type something")
     private String name;
 
+    @NotRussisanLetters()
     @Size(min = 3, message = "Field must must have more than 3 symbols")
     @NotEmpty(message = "Field 'surname' can't be empty, type something")
     private String surname;
 
-    @NotEmpty(message = "Field 'email' can't be empty, type something")
+    @Email(message = "uncorrected format e-mail")
     private String email;
     private Date created;
 
-
+    @NotEmpty(message = "Field can't be empty, type something")
     @NotNegative(message = "use positive numbers only")
     private Integer age;
 

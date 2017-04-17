@@ -23,19 +23,16 @@
 
 
             <input type="text" placeholder="name" name="userName" value="${user.name}"/>
-            <div class="text-danger">${errEditUser['emptyNameField']}</div>
+            <div class="text-danger">${mapErr['name']}</div>
 
             <input type="text" placeholder="surname" name="userSurname" value="${user.surname}"/>
-            <div class="text-danger">${errEditUser['emptySurnameField']}</div>
+            <div class="text-danger">${mapErr['surname']}</div>
 
             <input type="text" placeholder="e-mail" name="userEmail" value="${user.email}"/>
-            <div class="text-danger">${errEditUser['badFormatEmail']}</div>
-            <div class="text-danger">${errEditUser['emptyEmailField']}</div>
-            <div class="text-danger">${errEditUser['hasShortLengthEmail']}</div>
-            <div class="text-danger">${errEditUser['someUserHasThisEmail']}</div>
+            <div class="text-danger">${mapErr['email']}</div>
 
             <input required type="number"  placeholder="age of user" name="userAge" value="${user.age}"/>
-            <div class="text-danger">${errEditUser['userAgeUncorrected']}</div>
+            <div class="text-danger">${mapErr['age']}</div>
 
 
             <select name="departmentId">

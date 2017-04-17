@@ -40,7 +40,6 @@ public class CreateUserAction extends OvalValidator implements Action {
         String emailUser = request.getParameter("userEmail");
         Integer userAge = Integer.parseInt(request.getParameter("userAge"));
         Integer departmentId = Integer.parseInt(request.getParameter("departmentId"));
-        boolean userEmailValid = emailUser.matches("^[a-z0-9_\\-.]{2,}@[a-z0-9_\\-.]{2,}\\.[a-z]{2,}$");
 
         User user = new User();
         user.setName(nameUser);

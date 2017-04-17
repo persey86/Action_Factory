@@ -41,7 +41,7 @@
 
         <label>Name</label>
           <input type="text" placeholder="name" name="userName" value="${invalidUser.name}"/>
-                <div class="text-danger">${mapErr['name']}</div>
+        <div class="text-danger">${mapErr['name']}</div>
 
 <label>Surname</label>
           <input type="text" placeholder="surname" name="userSurname" value="${invalidUser.surname}"/>

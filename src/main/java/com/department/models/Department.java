@@ -11,6 +11,7 @@ import java.util.Date;
 public class Department {
     private Integer id;
 
+    @AssertTrue(message = "other department has this name")
     @NotRussisanLetters()
     @Length(min=3, message = "Put more than 3 symbols")
     @NotEmpty(message = "Field can't be empty")
