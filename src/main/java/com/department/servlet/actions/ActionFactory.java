@@ -13,27 +13,26 @@ import java.util.Map;
  */
 public class ActionFactory {
     public static Map<String, Action> actions = new HashMap<>();
-        static  {
-                    actions.put("GET/", new ShowAllDepartmentsAction());
-                    actions.put("GET/allUsers", new ShowAllUsersAction());
-                    actions.put("GET/createDepartment", new ShowCreateDepartmentPageAction());
-                    actions.put("GET/createUser", new ShowCreateUserPageAction());
 
+              static   {
+                  actions.put("GET/", new ShowAllDepartmentsAction());
+                  actions.put("GET/allUsers", new ShowAllUsersAction());
+                  actions.put("GET/createDepartment", new ShowCreateDepartmentPageAction());
+                  actions.put("GET/createUser", new ShowCreateUserPageAction());
 
-                    actions.put("POST/createUser", new CreateUserAction());
-                    actions.put("POST/createDepartment", new CreateDepartmentAction());
-                    actions.put("POST/delete", new DeleteDepartmentAction());
-                    actions.put("POST/delete", new DeleteUserAction());
-                    actions.put("POST/selectedDepartmentId", new ShowUsersFromOwnDepartmentId());
-                    actions.put("GET/notFound", new NotFound());
-                    actions.put("GET/editDepartment", new ShowEditDepartmentPage());
+                  actions.put("POST/createUser", new CreateUserAction());
+                  actions.put("POST/createDepartment", new CreateDepartmentAction());
+                  actions.put("POST/deleteDepartment", new DeleteDepartmentAction());
+                  actions.put("POST/deleteUser", new DeleteUserAction());
+                  actions.put("POST/selectedDepartmentId", new ShowUsersFromOwnDepartmentId());
+                  actions.put("GET/notFound", new NotFound());
+                  actions.put("GET/editDepartment", new ShowEditDepartmentPage());
 
-                    actions.put("POST/editDepartment", new EditDepartmentAction());
+                  actions.put("POST/editDepartment", new EditDepartmentAction());
 
-                    actions.put("GET/editUser", new ShowEditUserPage());
-                    actions.put("POST/editUser", new EditUserAction());
-                }
-
+                  actions.put("GET/editUser", new ShowEditUserPage());
+                  actions.put("POST/editUser", new EditUserAction());
+              }
 
     public static Action getAction(HttpServletRequest request) {
         String uri = request.getMethod() + request.getRequestURI();

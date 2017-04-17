@@ -34,7 +34,6 @@ public class CreateDepartmentAction extends OvalValidator implements Action {
         department.setName(name);
         department.setCreated(new Date());
 
-
         try {
             departmentService.saveEntityWithValidation(department);
             return new RedirectResult("/");

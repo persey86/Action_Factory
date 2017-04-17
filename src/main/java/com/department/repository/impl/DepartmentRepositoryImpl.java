@@ -99,7 +99,7 @@ public class DepartmentRepositoryImpl implements DepartmentRepository{
         try (Connection connection = getConnection()) {
             PreparedStatement pStm = connection.prepareStatement(DELETE_DEPARTMENTS);
             pStm.setInt(1, id);
-            pStm.execute();
+            pStm.executeUpdate();
         } catch (SQLException | ClassNotFoundException e) {
             throw new DepartmentRepositoryException("Error while deleted models form SQL ", e);
         }
@@ -185,5 +185,4 @@ public class DepartmentRepositoryImpl implements DepartmentRepository{
             throw new DepartmentRepositoryException("Error when check is any department has this name", e);
         }
     }
-
 }

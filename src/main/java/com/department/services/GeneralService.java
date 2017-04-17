@@ -3,7 +3,7 @@ package com.department.services;
 import java.util.List;
 
 /**
- * Created by Anastasia on 15.04.2017.
+ * Created on 15.04.2017.
  */
 public interface GeneralService<T, E, EX extends Exception>{
 

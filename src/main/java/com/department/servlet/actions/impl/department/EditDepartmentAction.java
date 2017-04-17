@@ -8,6 +8,7 @@ import com.department.services.impl.DepartmentServiceImpl;
 import com.department.servlet.actions.Action;
 import com.department.servlet.actions.actionresults.ForwardResult;
 import com.department.servlet.actions.actionresults.RedirectResult;
+import com.department.validation.OvalValidator;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,7 +18,7 @@ import java.util.Map;
 /**
  * Created on 08/04/2017.
  */
-public class EditDepartmentAction implements Action {
+public class EditDepartmentAction extends OvalValidator implements Action {
 
 
     private DepartmentService departmentService;

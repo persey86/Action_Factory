@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by Anastasia on 15.04.2017.
+ * Created on 15.04.2017.
  */
 public class DepartmentServiceImpl implements DepartmentService {
 

@@ -238,6 +238,5 @@ public class UserRepositoryImpl implements UserRepository {
         } catch (ClassNotFoundException | SQLException e) {
             throw new UserRepositoryException("Error while getting list of users", e);
         }
-
     }
 }

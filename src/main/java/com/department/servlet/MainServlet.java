@@ -22,11 +22,10 @@ public class MainServlet extends HttpServlet {
 
             view.execute(request,response);
 
-        } catch (com.department.exceptions.AppException e) {
+        } catch (Exception e) {
             ForwardResult error = new ForwardResult("errorPage");
             request.setAttribute("error", e.getMessage());
             error.execute(request, response);
-            e.printStackTrace();
         }
     }
 }

@@ -6,7 +6,7 @@ import com.department.models.User;
 import java.util.List;
 
 /**
- * Created by Anastasia on 15.04.2017.
+ * Created on 15.04.2017.
  */
 public interface UserRepository extends GeneralRepository<User, Integer, UserRepositoryException>{
 
