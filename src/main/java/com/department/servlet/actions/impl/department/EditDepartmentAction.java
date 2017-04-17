@@ -20,7 +20,6 @@ import java.util.Map;
  */
 public class EditDepartmentAction extends OvalValidator implements Action {
 
-
     private DepartmentService departmentService;
 
     public EditDepartmentAction(){
